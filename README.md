@@ -5,6 +5,10 @@ Updated Version for Postman Collection of the Shopify Admin API
 # How to use?
 
 The Postman Collection file is a JSON containing all information about each request.
+
+Open Postman and import the file `shopify-admin-postman.json` inside the Postman Collections folder.
+You can also import it directly from Github using this repo.
+
 This Collection is using Collection Variables, make sure to fill all the needs before launching requests!
 
 # How to know what is my API Credentials?
