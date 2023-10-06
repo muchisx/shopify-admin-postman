@@ -2,6 +2,8 @@
 
 Updated Version for Postman Collection of the Shopify Admin API
 
+https://www.postman.com/muchisx/workspace/public/collection/30298405-b7b62c23-aab8-41fa-9721-c440548ae15b?action=share&creator=30298405
+
 # How to use?
 
 The Postman Collection file is a JSON containing all information about each request.
