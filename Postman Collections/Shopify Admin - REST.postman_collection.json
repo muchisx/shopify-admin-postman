@@ -10200,6 +10200,47 @@
 									"raw": "{\r\n    \"metafield\": {\r\n        \"namespace\": \"my_fields\",\r\n        \"key\": \"subtitle\",\r\n        \"type\": \"single_line_text_field\",\r\n        \"value\": \"A subtitle for my page\"\r\n    }\r\n}"
 								},
 								"url": {
+									"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/{{owner_id}}/{{owner_resource}}/metafields.json",
+									"protocol": "https",
+									"host": [
+										"{{store_name}}",
+										"myshopify",
+										"com"
+									],
+									"path": [
+										"admin",
+										"api",
+										"{{api_version}}",
+										"{{owner_id}}",
+										"{{owner_resource}}",
+										"metafields.json"
+									]
+								},
+								"description": "You can create any number of metafields for a resource. To create metafields, use the corresponding resource's endpoint as listed on the examples."
+							},
+							"response": []
+						},
+						{
+							"name": "[Shop] Create a metafield",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Shopify-Access-Token",
+										"value": "{{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"metafield\": {\r\n        \"namespace\": \"my_fields\",\r\n        \"key\": \"my_items\",\r\n        \"value\": \"{\\\"items\\\":[\\\"some item\\\"]}\",\r\n        \"type\": \"json\"\r\n    }\r\n}"
+								},
+								"url": {
 									"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields.json",
 									"protocol": "https",
 									"host": [
@@ -10216,142 +10257,109 @@
 								},
 								"description": "You can create any number of metafields for a resource. To create metafields, use the corresponding resource's endpoint as listed on the examples."
 							},
-							"response": [
-								{
-									"name": "Create a new metafield for a Product resource",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"metafield\": {\n    \"namespace\": \"inventory\",\n    \"key\": \"warehouse\",\n    \"value\": 25,\n    \"value_type\": \"integer\"\n  }\n}"
-										},
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/products/{{product_id}}/metafields.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"products",
-												"{{product_id}}",
-												"metafields.json"
-											]
-										},
-										"description": "Creates a new metafield for a resource."
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"metafield\":{\"id\":1063298189,\"namespace\":\"inventory\",\"key\":\"warehouse\",\"value\":25,\"value_type\":\"integer\",\"description\":null,\"owner_id\":632910392,\"created_at\":\"2020-01-14T10:43:35-05:00\",\"updated_at\":\"2020-01-14T10:43:35-05:00\",\"owner_resource\":\"product\",\"admin_graphql_api_id\":\"gid:\\/\\/shopify\\/Metafield\\/1063298189\"}}"
-								},
-								{
-									"name": "Creating a metafield without a key will fail and return an error",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"metafield\": {\n    \"key\": null\n  }\n}"
-										},
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"metafields.json"
-											]
-										},
-										"description": "Creates a new metafield for a resource."
-									},
-									"status": "Unprocessable Entity",
-									"code": 422,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"errors\":{\"namespace\":[\"can't be blank\",\"is too short (minimum is 3 characters)\"],\"key\":[\"can't be blank\",\"is too short (minimum is 3 characters)\"],\"value\":[\"can't be blank\"],\"value_type\":[\"can't be blank\",\"is not included in the list\"]}}"
-								},
-								{
-									"name": "Create a new metafield for a Shop resource",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"metafield\": {\n    \"namespace\": \"inventory\",\n    \"key\": \"warehouse\",\n    \"value\": 25,\n    \"value_type\": \"integer\"\n  }\n}"
-										},
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"metafields.json"
-											]
-										},
-										"description": "Creates a new metafield for a resource."
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"metafield\":{\"id\":1063298188,\"namespace\":\"inventory\",\"key\":\"warehouse\",\"value\":25,\"value_type\":\"integer\",\"description\":null,\"owner_id\":690933842,\"created_at\":\"2020-01-14T10:43:34-05:00\",\"updated_at\":\"2020-01-14T10:43:34-05:00\",\"owner_resource\":\"shop\",\"admin_graphql_api_id\":\"gid:\\/\\/shopify\\/Metafield\\/1063298188\"}}"
-								}
-							]
+							"response": []
 						},
 						{
-							"name": "Retrieves a list of metafields that belong to a resource",
+							"name": "Retrieve a list of metafields from the resource's endpoint",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Shopify-Access-Token",
+										"value": "{{access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/{{owner_id}}/{{owner_resource}}/metafields.json",
+									"protocol": "https",
+									"host": [
+										"{{store_name}}",
+										"myshopify",
+										"com"
+									],
+									"path": [
+										"admin",
+										"api",
+										"{{api_version}}",
+										"{{owner_id}}",
+										"{{owner_resource}}",
+										"metafields.json"
+									],
+									"query": [
+										{
+											"key": "created_at_max",
+											"value": "",
+											"description": "Show metafields created before date (format: 2014-04-25T16:15:47-04:00) ",
+											"disabled": true
+										},
+										{
+											"key": "created_at_min",
+											"value": "",
+											"description": "Show metafields created after date (format: 2014-04-25T16:15:47-04:00) ",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "",
+											"description": "comma-separated list of fields to include in the response ",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "",
+											"description": "Show metafields with given key ",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "",
+											"description": "Amount of results(default: 50)(maximum: 250) ",
+											"disabled": true
+										},
+										{
+											"key": "namespace",
+											"value": "",
+											"description": "Show metafields with given namespace ",
+											"disabled": true
+										},
+										{
+											"key": "since_id",
+											"value": "",
+											"description": "Restrict results to after the specified ID ",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": null,
+											"description": "The type of data that the metafield stores in the `value` field. Refer to the list of supported types.",
+											"disabled": true
+										},
+										{
+											"key": "updated_at_max",
+											"value": "",
+											"description": "Show metafields last updated before date (format: 2014-04-25T16:15:47-04:00) ",
+											"disabled": true
+										},
+										{
+											"key": "updated_at_min",
+											"value": "",
+											"description": "Show metafields last updated after date (format: 2014-04-25T16:15:47-04:00) ",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Retrieves a list of metafields attached to a particular resource by using the resource's endpoint."
+							},
+							"response": []
+						},
+						{
+							"name": "[Shop] Retrieve a list of metafields from the resource's endpoint",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -10382,15 +10390,9 @@
 									],
 									"query": [
 										{
-											"key": "limit",
+											"key": "created_at_max",
 											"value": "",
-											"description": "Amount of results(default: 50)(maximum: 250) ",
-											"disabled": true
-										},
-										{
-											"key": "since_id",
-											"value": "",
-											"description": "Restrict results to after the specified ID ",
+											"description": "Show metafields created before date (format: 2014-04-25T16:15:47-04:00) ",
 											"disabled": true
 										},
 										{
@@ -10400,27 +10402,9 @@
 											"disabled": true
 										},
 										{
-											"key": "created_at_max",
+											"key": "fields",
 											"value": "",
-											"description": "Show metafields created before date (format: 2014-04-25T16:15:47-04:00) ",
-											"disabled": true
-										},
-										{
-											"key": "updated_at_min",
-											"value": "",
-											"description": "Show metafields last updated after date (format: 2014-04-25T16:15:47-04:00) ",
-											"disabled": true
-										},
-										{
-											"key": "updated_at_max",
-											"value": "",
-											"description": "Show metafields last updated before date (format: 2014-04-25T16:15:47-04:00) ",
-											"disabled": true
-										},
-										{
-											"key": "namespace",
-											"value": "",
-											"description": "Show metafields with given namespace ",
+											"description": "comma-separated list of fields to include in the response ",
 											"disabled": true
 										},
 										{
@@ -10430,10 +10414,81 @@
 											"disabled": true
 										},
 										{
-											"key": "value_type",
+											"key": "limit",
 											"value": "",
+											"description": "Amount of results(default: 50)(maximum: 250) ",
 											"disabled": true
 										},
+										{
+											"key": "namespace",
+											"value": "",
+											"description": "Show metafields with given namespace ",
+											"disabled": true
+										},
+										{
+											"key": "since_id",
+											"value": "",
+											"description": "Restrict results to after the specified ID ",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": null,
+											"description": "The type of data that the metafield stores in the `value` field. Refer to the list of supported types.",
+											"disabled": true
+										},
+										{
+											"key": "updated_at_max",
+											"value": "",
+											"description": "Show metafields last updated before date (format: 2014-04-25T16:15:47-04:00) ",
+											"disabled": true
+										},
+										{
+											"key": "updated_at_min",
+											"value": "",
+											"description": "Show metafields last updated after date (format: 2014-04-25T16:15:47-04:00) ",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Retrieves a list of metafields attached to a particular resource by using the resource's endpoint."
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve a specific metafield",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Shopify-Access-Token",
+										"value": "{{access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/{{owner_id}}/{{owner_resource}}/metafields/{{metafield_id}}.json",
+									"protocol": "https",
+									"host": [
+										"{{store_name}}",
+										"myshopify",
+										"com"
+									],
+									"path": [
+										"admin",
+										"api",
+										"{{api_version}}",
+										"{{owner_id}}",
+										"{{owner_resource}}",
+										"metafields",
+										"{{metafield_id}}.json"
+									],
+									"query": [
 										{
 											"key": "fields",
 											"value": "",
@@ -10442,519 +10497,12 @@
 										}
 									]
 								},
-								"description": "Retrieves a list of metafields that belong to a resource. <strong>Note:</strong> As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the <code>page</code> parameter will return an error. To learn more, see <a href=\"https://help.shopify.com/api/guides/paginated-rest-results\"><em>Making requests to paginated REST Admin API endpoints</em></a>."
+								"description": "Retrieve a metafield by specifying the ID. All fields of a metafield are returned unless specific fields are named."
 							},
-							"response": [
-								{
-									"name": "Retrieve metafields that belong to a Shop resource",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"metafields.json"
-											],
-											"query": [
-												{
-													"key": "limit",
-													"value": "",
-													"description": "Amount of results(default: 50)(maximum: 250) ",
-													"disabled": true
-												},
-												{
-													"key": "since_id",
-													"value": "",
-													"description": "Restrict results to after the specified ID ",
-													"disabled": true
-												},
-												{
-													"key": "created_at_min",
-													"value": "",
-													"description": "Show metafields created after date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "created_at_max",
-													"value": "",
-													"description": "Show metafields created before date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "updated_at_min",
-													"value": "",
-													"description": "Show metafields last updated after date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "updated_at_max",
-													"value": "",
-													"description": "Show metafields last updated before date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "namespace",
-													"value": "",
-													"description": "Show metafields with given namespace ",
-													"disabled": true
-												},
-												{
-													"key": "key",
-													"value": "",
-													"description": "Show metafields with given key ",
-													"disabled": true
-												},
-												{
-													"key": "value_type",
-													"value": "",
-													"disabled": true
-												},
-												{
-													"key": "fields",
-													"value": "",
-													"description": "comma-separated list of fields to include in the response ",
-													"disabled": true
-												}
-											]
-										},
-										"description": "Retrieves a list of metafields that belong to a resource. <strong>Note:</strong> As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the <code>page</code> parameter will return an error. To learn more, see <a href=\"https://help.shopify.com/api/guides/paginated-rest-results\"><em>Making requests to paginated REST Admin API endpoints</em></a>."
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"metafields\":[{\"id\":721389482,\"namespace\":\"affiliates\",\"key\":\"app_key\",\"value\":\"app_key\",\"value_type\":\"string\",\"description\":null,\"owner_id\":690933842,\"created_at\":\"2020-01-14T10:41:30-05:00\",\"updated_at\":\"2020-01-14T10:41:30-05:00\",\"owner_resource\":\"shop\",\"admin_graphql_api_id\":\"gid:\\/\\/shopify\\/Metafield\\/721389482\"}]}"
-								},
-								{
-									"name": "Retrieve a list of metafields that belong to a Product resource",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/products/{{product_id}}/metafields.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"products",
-												"{{product_id}}",
-												"metafields.json"
-											],
-											"query": [
-												{
-													"key": "limit",
-													"value": "",
-													"description": "Amount of results(default: 50)(maximum: 250) ",
-													"disabled": true
-												},
-												{
-													"key": "since_id",
-													"value": "",
-													"description": "Restrict results to after the specified ID ",
-													"disabled": true
-												},
-												{
-													"key": "created_at_min",
-													"value": "",
-													"description": "Show metafields created after date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "created_at_max",
-													"value": "",
-													"description": "Show metafields created before date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "updated_at_min",
-													"value": "",
-													"description": "Show metafields last updated after date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "updated_at_max",
-													"value": "",
-													"description": "Show metafields last updated before date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "namespace",
-													"value": "",
-													"description": "Show metafields with given namespace ",
-													"disabled": true
-												},
-												{
-													"key": "key",
-													"value": "",
-													"description": "Show metafields with given key ",
-													"disabled": true
-												},
-												{
-													"key": "value_type",
-													"value": "",
-													"disabled": true
-												},
-												{
-													"key": "fields",
-													"value": "",
-													"description": "comma-separated list of fields to include in the response ",
-													"disabled": true
-												}
-											]
-										},
-										"description": "Retrieves a list of metafields that belong to a resource. <strong>Note:</strong> As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the <code>page</code> parameter will return an error. To learn more, see <a href=\"https://help.shopify.com/api/guides/paginated-rest-results\"><em>Making requests to paginated REST Admin API endpoints</em></a>."
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"metafields\":[{\"id\":845366454,\"namespace\":\"translations\",\"key\":\"title_fr\",\"value\":\"produit\",\"value_type\":\"string\",\"description\":\"French product title\",\"owner_id\":632910392,\"created_at\":\"2020-01-14T10:41:30-05:00\",\"updated_at\":\"2020-01-14T10:41:30-05:00\",\"owner_resource\":\"product\",\"admin_graphql_api_id\":\"gid:\\/\\/shopify\\/Metafield\\/845366454\"}]}"
-								},
-								{
-									"name": "Retrieve metafields after the specified ID that belong to a Shop resource",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"metafields.json"
-											],
-											"query": [
-												{
-													"key": "limit",
-													"value": "",
-													"description": "Amount of results(default: 50)(maximum: 250) ",
-													"disabled": true
-												},
-												{
-													"key": "since_id",
-													"value": "",
-													"description": "Restrict results to after the specified ID ",
-													"disabled": true
-												},
-												{
-													"key": "created_at_min",
-													"value": "",
-													"description": "Show metafields created after date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "created_at_max",
-													"value": "",
-													"description": "Show metafields created before date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "updated_at_min",
-													"value": "",
-													"description": "Show metafields last updated after date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "updated_at_max",
-													"value": "",
-													"description": "Show metafields last updated before date (format: 2014-04-25T16:15:47-04:00) ",
-													"disabled": true
-												},
-												{
-													"key": "namespace",
-													"value": "",
-													"description": "Show metafields with given namespace ",
-													"disabled": true
-												},
-												{
-													"key": "key",
-													"value": "",
-													"description": "Show metafields with given key ",
-													"disabled": true
-												},
-												{
-													"key": "value_type",
-													"value": "",
-													"disabled": true
-												},
-												{
-													"key": "fields",
-													"value": "",
-													"description": "comma-separated list of fields to include in the response ",
-													"disabled": true
-												}
-											]
-										},
-										"description": "Retrieves a list of metafields that belong to a resource. <strong>Note:</strong> As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the <code>page</code> parameter will return an error. To learn more, see <a href=\"https://help.shopify.com/api/guides/paginated-rest-results\"><em>Making requests to paginated REST Admin API endpoints</em></a>."
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"metafields\":[{\"id\":1063298187,\"namespace\":\"inventory\",\"key\":\"warehouse\",\"value\":25,\"value_type\":\"integer\",\"description\":null,\"owner_id\":690933842,\"created_at\":\"2020-01-14T10:43:29-05:00\",\"updated_at\":\"2020-01-14T10:43:29-05:00\",\"owner_resource\":\"shop\",\"admin_graphql_api_id\":\"gid:\\/\\/shopify\\/Metafield\\/1063298187\"}]}"
-								}
-							]
+							"response": []
 						},
 						{
-							"name": "Retrieves a list of metafields that belong to a Product Image resource",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "X-Shopify-Access-Token",
-										"value": "{{access_token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields.json",
-									"protocol": "https",
-									"host": [
-										"{{store_name}}",
-										"myshopify",
-										"com"
-									],
-									"path": [
-										"admin",
-										"api",
-										"{{api_version}}",
-										"metafields.json"
-									]
-								},
-								"description": "Retrieves a list of metafields that belong to a Product Image resource."
-							},
-							"response": [
-								{
-									"name": "Retrieve a list of metafields that belong to a Product Image resource",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields.json?metafield[owner_id]=850703190&amp;metafield[owner_resource]=product_image",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"metafields.json"
-											],
-											"query": [
-												{
-													"key": "metafield[owner_id]",
-													"value": "850703190"
-												},
-												{
-													"key": "amp;metafield[owner_resource]",
-													"value": "product_image"
-												}
-											]
-										},
-										"description": "Retrieves a list of metafields that belong to a Product Image resource."
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"metafields\":[{\"id\":625663657,\"namespace\":\"translation\",\"key\":\"title_fr\",\"value\":\"tbn\",\"value_type\":\"string\",\"description\":\"French product image title\",\"owner_id\":850703190,\"created_at\":\"2020-01-14T10:41:30-05:00\",\"updated_at\":\"2020-01-14T10:41:30-05:00\",\"owner_resource\":\"product_image\",\"admin_graphql_api_id\":\"gid:\\/\\/shopify\\/Metafield\\/625663657\"}]}"
-								}
-							]
-						},
-						{
-							"name": "Retrieves a count of a resource's metafields",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "X-Shopify-Access-Token",
-										"value": "{{access_token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields/count.json",
-									"protocol": "https",
-									"host": [
-										"{{store_name}}",
-										"myshopify",
-										"com"
-									],
-									"path": [
-										"admin",
-										"api",
-										"{{api_version}}",
-										"metafields",
-										"count.json"
-									]
-								},
-								"description": "Retrieves a count of a resource's metafields."
-							},
-							"response": [
-								{
-									"name": "Retrieve a count of metafields that belong to a Shop resource",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields/count.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"metafields",
-												"count.json"
-											]
-										},
-										"description": "Retrieves a count of a resource's metafields."
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"count\":1}"
-								},
-								{
-									"name": "Retrieve a count of metafields that belong to a Product resource",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/products/{{product_id}}/metafields/count.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"products",
-												"{{product_id}}",
-												"metafields",
-												"count.json"
-											]
-										},
-										"description": "Retrieves a count of a resource's metafields."
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"count\":1}"
-								}
-							]
-						},
-						{
-							"name": "Retrieves a single metafield from a resource by its ID",
+							"name": "[Shop] Retrieve a specific metafield",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -10988,116 +10536,178 @@
 										{
 											"key": "fields",
 											"value": "",
-											"description": "Show only certain fields, specified by a comma-separated list of field names. ",
+											"description": "comma-separated list of fields to include in the response ",
 											"disabled": true
 										}
 									]
 								},
-								"description": "Retrieves a single metafield from a resource by its ID."
+								"description": "Retrieve a metafield by specifying the ID. All fields of a metafield are returned unless specific fields are named."
 							},
-							"response": [
-								{
-									"name": "Retrieve a single metafield by its ID",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/products/{{product_id}}/metafields/{{metafield_id}}.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"products",
-												"{{product_id}}",
-												"metafields",
-												"{{metafield_id}}.json"
-											],
-											"query": [
-												{
-													"key": "fields",
-													"value": "",
-													"description": "Show only certain fields, specified by a comma-separated list of field names. ",
-													"disabled": true
-												}
-											]
-										},
-										"description": "Retrieves a single metafield from a resource by its ID."
+							"response": []
+						},
+						{
+							"name": "Retrieve a count of a resource's metafields.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
+									{
+										"key": "X-Shopify-Access-Token",
+										"value": "{{access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{store_name}}.myshopify.com/admin/api/{{api_version}}/{{owner_id}}/{{owner_resource}}/metafields/count.json",
+									"host": [
+										"{{store_name}}",
+										"myshopify",
+										"com"
 									],
-									"cookie": [],
-									"body": "{\"metafield\":{\"id\":845366454,\"namespace\":\"translations\",\"key\":\"title_fr\",\"value\":\"produit\",\"value_type\":\"string\",\"description\":\"French product title\",\"owner_id\":632910392,\"created_at\":\"2020-01-14T10:41:30-05:00\",\"updated_at\":\"2020-01-14T10:41:30-05:00\",\"owner_resource\":\"product\",\"admin_graphql_api_id\":\"gid:\\/\\/shopify\\/Metafield\\/845366454\"}}"
+									"path": [
+										"admin",
+										"api",
+										"{{api_version}}",
+										"{{owner_id}}",
+										"{{owner_resource}}",
+										"metafields",
+										"count.json"
+									]
 								},
-								{
-									"name": "Retrieve a single metafield by its ID",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields/{{metafield_id}}.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"metafields",
-												"{{metafield_id}}.json"
-											],
-											"query": [
-												{
-													"key": "fields",
-													"value": "",
-													"description": "Show only certain fields, specified by a comma-separated list of field names. ",
-													"disabled": true
-												}
-											]
-										},
-										"description": "Retrieves a single metafield from a resource by its ID."
+								"description": "Get a count of all metafields that belong to a particular resource."
+							},
+							"response": []
+						},
+						{
+							"name": "[Shop] Retrieve a count of a resource's metafields.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
+									{
+										"key": "X-Shopify-Access-Token",
+										"value": "{{access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields/count.json",
+									"host": [
+										"{{store_name}}",
+										"myshopify",
+										"com"
 									],
-									"cookie": [],
-									"body": "{\"metafield\":{\"id\":721389482,\"namespace\":\"affiliates\",\"key\":\"app_key\",\"value\":\"app_key\",\"value_type\":\"string\",\"description\":null,\"owner_id\":690933842,\"created_at\":\"2020-01-14T10:41:30-05:00\",\"updated_at\":\"2020-01-14T10:41:30-05:00\",\"owner_resource\":\"shop\",\"admin_graphql_api_id\":\"gid:\\/\\/shopify\\/Metafield\\/721389482\"}}"
-								}
-							]
+									"path": [
+										"admin",
+										"api",
+										"{{api_version}}",
+										"metafields",
+										"count.json"
+									]
+								},
+								"description": "Get a count of all metafields that belong to a particular resource."
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve a list of metafields by using query parameters",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Shopify-Access-Token",
+										"value": "{{access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields.json?metafield[owner_id]={{owner_id}}&metafield[owner_resource]={{owner_resource}}",
+									"protocol": "https",
+									"host": [
+										"{{store_name}}",
+										"myshopify",
+										"com"
+									],
+									"path": [
+										"admin",
+										"api",
+										"{{api_version}}",
+										"metafields.json"
+									],
+									"query": [
+										{
+											"key": "metafield[owner_id]",
+											"value": "{{owner_id}}",
+											"description": "Filter by the resource ID on which the metafield is attached to."
+										},
+										{
+											"key": "metafield[owner_resource]",
+											"value": "{{owner_resource}}",
+											"description": "Filter by the resource name on which the metafield is attached to."
+										}
+									]
+								},
+								"description": "Retrieves a list of metafields that belong to a resource by using query parameters."
+							},
+							"response": []
 						},
 						{
 							"name": "Updates a metafield",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Shopify-Access-Token",
+										"value": "{{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/{{owner_id}}/{{owner_resource}}/metafields/{{metafield_id}}.json",
+									"protocol": "https",
+									"host": [
+										"{{store_name}}",
+										"myshopify",
+										"com"
+									],
+									"path": [
+										"admin",
+										"api",
+										"{{api_version}}",
+										"{{owner_id}}",
+										"{{owner_resource}}",
+										"metafields",
+										"{{metafield_id}}.json"
+									]
+								},
+								"description": "Updates a metafield."
+							},
+							"response": []
+						},
+						{
+							"name": "[Shop] Updates a metafield",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -11134,101 +10744,52 @@
 								},
 								"description": "Updates a metafield."
 							},
-							"response": [
-								{
-									"name": "Update a metafield. The namespace and key of an existing metafield can't be changed.",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"metafield\": {\n    \"id\": 845366454,\n    \"value\": \"titre\",\n    \"value_type\": \"string\"\n  }\n}"
-										},
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/products/{{product_id}}/metafields/{{metafield_id}}.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"products",
-												"{{product_id}}",
-												"metafields",
-												"{{metafield_id}}.json"
-											]
-										},
-										"description": "Updates a metafield."
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"metafield\":{\"id\":845366454,\"namespace\":\"translations\",\"key\":\"title_fr\",\"value\":\"titre\",\"value_type\":\"string\",\"description\":\"French product title\",\"owner_id\":632910392,\"created_at\":\"2020-01-14T10:41:30-05:00\",\"updated_at\":\"2020-01-14T10:43:37-05:00\",\"owner_resource\":\"product\",\"admin_graphql_api_id\":\"gid:\\/\\/shopify\\/Metafield\\/845366454\"}}"
-								},
-								{
-									"name": "Update a metafield. The namespace and key of an existing metafield can't be changed.",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"metafield\": {\n    \"id\": 721389482,\n    \"value\": \"something new\",\n    \"value_type\": \"string\"\n  }\n}"
-										},
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields/{{metafield_id}}.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"metafields",
-												"{{metafield_id}}.json"
-											]
-										},
-										"description": "Updates a metafield."
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\"metafield\":{\"id\":721389482,\"namespace\":\"affiliates\",\"key\":\"app_key\",\"value\":\"something new\",\"value_type\":\"string\",\"description\":null,\"owner_id\":690933842,\"created_at\":\"2020-01-14T10:41:30-05:00\",\"updated_at\":\"2020-01-14T10:43:36-05:00\",\"owner_resource\":\"shop\",\"admin_graphql_api_id\":\"gid:\\/\\/shopify\\/Metafield\\/721389482\"}}"
-								}
-							]
+							"response": []
 						},
 						{
 							"name": "Deletes a metafield by its ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Shopify-Access-Token",
+										"value": "{{access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/{{owner_id}}/{{owner_resource}}/metafields/{{metafield_id}}.json",
+									"protocol": "https",
+									"host": [
+										"{{store_name}}",
+										"myshopify",
+										"com"
+									],
+									"path": [
+										"admin",
+										"api",
+										"{{api_version}}",
+										"{{owner_id}}",
+										"{{owner_resource}}",
+										"metafields",
+										"{{metafield_id}}.json"
+									]
+								},
+								"description": "Deletes a metafield by its ID."
+							},
+							"response": []
+						},
+						{
+							"name": "[Shop] Deletes a metafield by its ID.",
 							"request": {
 								"method": "DELETE",
 								"header": [
@@ -11265,98 +10826,7 @@
 								},
 								"description": "Deletes a metafield by its ID."
 							},
-							"response": [
-								{
-									"name": "Delete a metafield by its ID",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/metafields/{{metafield_id}}.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"metafields",
-												"{{metafield_id}}.json"
-											]
-										},
-										"description": "Deletes a metafield by its ID."
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{}"
-								},
-								{
-									"name": "Delete a metafield by its ID",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"url": {
-											"raw": "https://{{store_name}}.myshopify.com/admin/api/{{api_version}}/products/{{product_id}}/metafields/{{metafield_id}}.json",
-											"protocol": "https",
-											"host": [
-												"{{store_name}}",
-												"myshopify",
-												"com"
-											],
-											"path": [
-												"admin",
-												"api",
-												"{{api_version}}",
-												"products",
-												"{{product_id}}",
-												"metafields",
-												"{{metafield_id}}.json"
-											]
-										},
-										"description": "Deletes a metafield by its ID."
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{}"
-								}
-							]
+							"response": []
 						}
 					],
 					"description": "<p>The Metafield resource allows you to add additional information to other Admin API resources. Metafields can be used in several ways, such as to add a summary to a blog post. You can also use metafields to share information with other Shopify apps.</p> <h2>Resources that can have metafields</h2> <p>Metafields can be added to the following resources:</p> <table> <tr> <th>Type of resource</th> <th>Location of metafields</th> </tr> <tr> <td>Article</td> <td><code>/admin/blogs/#{id}/articles/#{id}/metafields.json</code></td> </tr> <tr> <td>Blog</td> <td><code>/admin/blogs/#{id}/metafields.json</code></td> </tr> <tr> <td>CustomCollection and SmartCollection</td> <td><code>/admin/collections/#{id}/metafields.json</code></td> </tr> <tr> <td>Customer</td> <td><code>/admin/customers/#{id}/metafields.json</code></td> </tr> <tr> <td>Draft Order</td> <td><code>/admin/draft_orders/#{id}/metafields.json</code></td> </tr> <tr> <td>Order</td> <td><code>/admin/orders/#{id}/metafields.json</code></td> </tr> <tr> <td>Page</td> <td><code>/admin/pages/#{id}/metafields.json</code></td> </tr> <tr> <td>Product</td> <td><code>/admin/products/#{id}/metafields.json</code></td> </tr> <tr> <td>Product Variant</td> <td><code>/admin/products/#{id}/variants/#{id}/metafields.json</code></td> </tr> <tr> <td>Product Image</td> <td> <p><code>/admin/metafields.json?metafield[owner_id]=#{id}&amp;metafield[owner_resource]=product_image</code></p> <p>This endpoint will let you view the metafields for a product image. To add or change product image metafields, use the <a href=\"https://help.shopify.com/api/reference/product_image#metafield\">product image endpoint</a>.</p></td> </tr> <tr> <td>Shop</td> <td><code>/admin/metafields.json</code></td> </tr> </table>"
@@ -44581,6 +44051,14 @@
 		{
 			"key": "province_id",
 			"value": "{province_id}"
+		},
+		{
+			"key": "owner_id",
+			"value": "{owner_id}"
+		},
+		{
+			"key": "owner_resource",
+			"value": "{owner_resource}"
 		}
 	]
 }
