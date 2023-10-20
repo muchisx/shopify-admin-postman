@@ -1,23 +1,45 @@
-# Shopify Admin API Postman Collection (Updated 2023)
+# Shopify APIs Postman Collections (Updated 2023)
 
-Updated Version for Postman Collection of the Shopify Admin API
+Updated Version for Postman Collection of the Shopify Admin API and the Shopify Storefront API
 
 ## Web View
 
+### Shopify Admin API
 | GraphQL                                                                                            | REST                                                                                                                    |
 |----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | [Collection](https://www.postman.com/muchisx/workspace/public/collection/6522230ecae43373c3e1a533) | [Collection](https://www.postman.com/muchisx/workspace/public/collection/30298405-b7b62c23-aab8-41fa-9721-c440548ae15b) |
 
+### Shopify Storefront API
+
+| GraphQL                                                                                            |
+|----------------------------------------------------------------------------------------------------|
+| [Collection](https://www.postman.com/muchisx/workspace/public/collection/65317773ee1f5cf9a16a546d) |
+
 # How to use in your Workspace?
+
+For using it in your own Workspace you have multiple options.
+
+These Collections [are using Collection Variables](https://learning.postman.com/docs/sending-requests/variables/), make sure to fill all the variables that you will use before launching requests!
+
+## 1. You can use it from the Web View Collections linked above.
+The variables that you define under the `Current value` input are stored only in your account, so you can safely use it from there.
+
+## 2. [Fork it directly](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-entities/) from the Web View collections linked above.
+This should allow you to fork it directly into your Workspace.
+
+## 3. [Import it directly](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-from-git/) from this github repository.
+> This will only work for importing the REST APIs for now, due to a Postman bug I haven't been able to export the GraphQL ones to add it here.
+
+Go through the import process and it should automatically add it to your workspace.
+
+## 4. Manually download the collection files and import into Postman.
+> This will only work for importing the REST APIs for now, due to a Postman bug I haven't been able to export the GraphQL ones to add it here.
 
 The Postman Collection file is a JSON containing all information about each request.
 
-Open Postman and import the file `Postman Collections`/`Shopify Admin - REST.postman_collection.json`.
-You can also import it directly from Github using this repo.
+Open Postman and import one of the files [from this folder:](/Postman%20Collections/)
+- `Shopify Admin - REST.postman_collection.json`
 
-This Collection is using Collection Variables, make sure to fill all the needs before launching requests!
-
-> For some reason, exporting a GraphQL collection in Postman is bugged for me, so I can't export it to add it to this repo, but you can still use it, fork it and view it from the links above (Web View).
 
 # Where are my API Credentials?
 
