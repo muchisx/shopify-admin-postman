@@ -21,18 +21,18 @@ For using it in your own Workspace you have multiple options.
 
 These Collections [are using Collection Variables](https://learning.postman.com/docs/sending-requests/variables/), make sure to fill all the variables that you will use before launching requests!
 
-## 1. You can use it from the Web View Collections linked above.
+## Option A. You can use it from the Web View Collections linked above.
 The variables that you define under the `Current value` input are stored only in your account, so you can safely use it from there.
 
-## 2. [Fork it directly](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-entities/) from the Web View collections linked above.
+## Option B. [Fork it directly](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-entities/) from the Web View collections linked above.
 This should allow you to fork it directly into your Workspace.
 
-## 3. [Import it directly](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-from-git/) from this github repository.
+## Option C. [Import it directly](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-from-git/) from this github repository.
 > This will only work for importing the REST APIs for now, due to a Postman bug I haven't been able to export the GraphQL ones to add it here.
 
 Go through the import process and it should automatically add it to your workspace.
 
-## 4. Manually download the collection files and import into Postman.
+## Option D. Manually download the collection files and import into Postman.
 > This will only work for importing the REST APIs for now, due to a Postman bug I haven't been able to export the GraphQL ones to add it here.
 
 The Postman Collection file is a JSON containing all information about each request.
