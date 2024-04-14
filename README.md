@@ -1,4 +1,4 @@
-# Shopify APIs Postman Collections (Updated 2023)
+# Shopify APIs Postman Collections (Updated 2024)
 
 Updated Version for Postman Collection of the Shopify Admin API and the Shopify Storefront API
 
