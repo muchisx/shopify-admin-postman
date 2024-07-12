@@ -15,7 +15,7 @@ Updated Version for Postman Collection of the Shopify Admin API and the Shopify 
 |----------------------------------------------------------------------------------------------------|
 | [Collection](https://www.postman.com/muchisx/workspace/public/collection/65317773ee1f5cf9a16a546d) |
 
-*Not recommend to use via Postman. [I recommend this approach instead.](#recommended-graphql-client-for-first-time-users)
+*_Not recommend to use via Postman. [I recommend this approach instead.](#recommended-graphql-client-for-first-time-users)_
 
 # How to use in your Workspace?
 
