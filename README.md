@@ -5,15 +5,17 @@ Updated Version for Postman Collection of the Shopify Admin API and the Shopify 
 ## Web View
 
 ### Shopify Admin API
-| GraphQL                                                                                            | REST                                                                                                                    |
+| GraphQL*                                                                                           | REST                                                                                                                    |
 |----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | [Collection](https://www.postman.com/muchisx/workspace/public/collection/6522230ecae43373c3e1a533) | [Collection](https://www.postman.com/muchisx/workspace/public/collection/30298405-b7b62c23-aab8-41fa-9721-c440548ae15b) |
 
 ### Shopify Storefront API
 
-| GraphQL                                                                                            |
+| GraphQL*                                                                                           |
 |----------------------------------------------------------------------------------------------------|
 | [Collection](https://www.postman.com/muchisx/workspace/public/collection/65317773ee1f5cf9a16a546d) |
+
+*Not recommend to use via Postman. [I recommend this approach instead.](#recommended-graphql-client-for-first-time-users)
 
 # How to use in your Workspace?
 
@@ -23,9 +25,14 @@ These Collections [are using Collection Variables](https://learning.postman.com/
 
 ## Option A. You can use it from the Web View Collections linked above.
 The variables that you define under the `Current value` input are stored only in your account, so you can safely use it from there.
+> This will only work for the REST APIs for now, due to Postman only allowing GraphQL queries in the Desktop client.
+
+## Option A-2. You can use it from the Desktop View.
+The variables that you define under the `Current value` input are stored only in your account, so you can safely use it from there.
 
 ## Option B. [Fork it directly](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-entities/) from the Web View collections linked above.
 This should allow you to fork it directly into your Workspace.
+> This will only work for the REST APIs for now, due to Postman only allowing GraphQL queries in the Desktop client.
 
 ## Option C. [Import it directly](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-from-git/) from this github repository.
 > This will only work for importing the REST APIs for now, due to a Postman bug I haven't been able to export the GraphQL ones to add it here.
@@ -46,6 +53,11 @@ Open Postman and import one of the files [from this folder:](/Postman%20Collecti
 In order to retrieve or create your private API Credentials, follow this link:
 
 https://shopify.dev/docs/apps/auth/admin-app-access-tokens
+
+# Recommended GraphQL client for first-time users.
+
+If you're a first-time GraphQL user and just want to make mock requests to a store. I recommend you to start [here](https://www.shopify.com/partners/blog/getting-started-with-graphql).
+In short, install the [GraphQL Shopify App](https://shopify-graphiql-app.shopifycloud.com/login?itcat=partner_blog&itterm=getting_started_with_graphql) in your store and do requests from there so you can learn the shape of the queries.
 
 # Collaboration
 
