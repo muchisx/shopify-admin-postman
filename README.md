@@ -9,7 +9,6 @@ Updated Version for Postman Collection of the Shopify Admin API and the Shopify 
   - [Web View](#web-view)
     - [Shopify Admin API](#shopify-admin-api)
     - [Shopify Storefront API](#shopify-storefront-api)
-          - [\*_Not recommend to use via Postman. I recommend this approach instead._](#not-recommend-to-use-via-postman-i-recommend-this-approach-instead)
 - [How to use in your Workspace?](#how-to-use-in-your-workspace)
   - [Option A. You can use it from the Web View Collections linked above.](#option-a-you-can-use-it-from-the-web-view-collections-linked-above)
   - [Option A-2. You can use it from the Desktop View.](#option-a-2-you-can-use-it-from-the-desktop-view)
@@ -35,7 +34,7 @@ Updated Version for Postman Collection of the Shopify Admin API and the Shopify 
 | -------------------------------------------------------------------------------------------------- |
 | [Collection](https://www.postman.com/muchisx/workspace/public/collection/65317773ee1f5cf9a16a546d) |
 
-###### \*_Not recommend to use via Postman. [I recommend this approach instead.](#recommended-graphql-client-for-first-time-users)_
+<sub> \*_GraphQL not recommend to use via Postman Web. [I recommend this approach instead.](#recommended-graphql-client-for-first-time-users)_ </sub>
 
 # How to use in your Workspace?
 
@@ -85,6 +84,8 @@ https://shopify.dev/docs/apps/auth/admin-app-access-tokens
 
 If you're a first-time GraphQL user and just want to make mock requests to a store. I recommend you to start [here](https://www.shopify.com/partners/blog/getting-started-with-graphql).
 In short, install the [GraphQL Shopify App](https://shopify-graphiql-app.shopifycloud.com/login?itcat=partner_blog&itterm=getting_started_with_graphql) in your store and do requests from there so you can learn the shape of the queries.
+
+Alternatively, you can use Postman's GraphQL client in the Desktop version.
 
 # Collaboration
 
