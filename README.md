@@ -9,12 +9,12 @@ Updated Version for Postman Collection of the Shopify Admin API and the Shopify 
   - [Web View](#web-view)
     - [Shopify Admin API](#shopify-admin-api)
     - [Shopify Storefront API](#shopify-storefront-api)
-- [How to use in your Workspace?](#how-to-use-in-your-workspace)
-  - [Option A. You can use it from the Web View Collections linked above.](#option-a-you-can-use-it-from-the-web-view-collections-linked-above)
-  - [Option A-2. You can use it from the Desktop View.](#option-a-2-you-can-use-it-from-the-desktop-view)
-  - [Option B. Fork it directly from the Web View collections linked above.](#option-b-fork-it-directly-from-the-web-view-collections-linked-above)
-  - [Option C. Import it directly from this github repository.](#option-c-import-it-directly-from-this-github-repository)
-  - [Option D. Manually download the collection files and import into Postman.](#option-d-manually-download-the-collection-files-and-import-into-postman)
+- [How to use it in Postman?](#how-to-use-it-in-postman)
+  - [Web View Collections](#web-view-collections)
+  - [Desktop View](#desktop-view)
+  - [Fork it directly from the Web View collections.](#fork-it-directly-from-the-web-view-collections)
+  - [Import it directly from this github repository.](#import-it-directly-from-this-github-repository)
+  - [Download the collection files and import into Postman.](#download-the-collection-files-and-import-into-postman)
 - [Where are my API Credentials?](#where-are-my-api-credentials)
 - [Recommended GraphQL client for first-time users.](#recommended-graphql-client-for-first-time-users)
 - [Collaboration](#collaboration)
@@ -36,35 +36,37 @@ Updated Version for Postman Collection of the Shopify Admin API and the Shopify 
 
 <sub> \*_GraphQL not recommend to use via Postman Web. [I recommend this approach instead.](#recommended-graphql-client-for-first-time-users)_ </sub>
 
-# How to use in your Workspace?
-
-For using it in your own Workspace you have multiple options.
+# How to use it in Postman?
 
 These Collections [are using Collection Variables](https://learning.postman.com/docs/sending-requests/variables/), make sure to fill all the variables that you will use before launching requests!
 
-## Option A. You can use it from the Web View Collections linked above.
+For using it in your own Workspace you have multiple options:
+
+## Web View Collections
+
+As linked above, you can use these [Web View](#web-view) collections.
 
 The variables that you define under the `Current value` input are stored only in your account, so you can safely use it from there.
 
 > This will only work for the REST APIs for now, due to Postman only allowing GraphQL queries in the Desktop client.
 
-## Option A-2. You can use it from the Desktop View.
+## Desktop View
 
 The variables that you define under the `Current value` input are stored only in your account, so you can safely use it from there.
 
-## Option B. [Fork it directly](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-entities/) from the Web View collections linked above.
+## [Fork it directly](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-entities/) from the Web View collections.
 
-This should allow you to fork it directly into your Workspace.
+Go to any collection in [Web View](#web-view) and click on fork. This should allow you to fork it directly into your Workspace.
 
 > This will only work for the REST APIs for now, due to Postman only allowing GraphQL queries in the Desktop client.
 
-## Option C. [Import it directly](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-from-git/) from this github repository.
+## [Import it directly](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-from-git/) from this github repository.
 
 > This will only work for importing the REST APIs for now, due to a Postman bug I haven't been able to export the GraphQL ones to add it here.
 
 Go through the import process and it should automatically add it to your workspace.
 
-## Option D. Manually download the collection files and import into Postman.
+## Download the collection files and import into Postman.
 
 > This will only work for importing the REST APIs for now, due to a Postman bug I haven't been able to export the GraphQL ones to add it here.
 
