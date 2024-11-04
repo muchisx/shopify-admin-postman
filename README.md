@@ -2,6 +2,10 @@
 
 Updated Version for Postman Collection of the Shopify Admin API and the Shopify Storefront API
 
+> [!WARNING]  
+> Shopify is deprecating the REST Admin API as of October 1, 2024. You can still currently use their endpoints but you will need to eventually migrate to Graphql. [Follow this migration guide](https://shopify.dev/docs/apps/build/graphql/migrate).
+
+
 ## Table of Contents
 
 - [Shopify APIs Postman Collections (Updated 2024)](#shopify-apis-postman-collections-updated-2024)
